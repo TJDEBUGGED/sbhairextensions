@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stunning Hair Extensions - Premium wigs and extensions designed to elevate your beauty. Luxury hair, flawless confidence.">
+    <title>Stunning Hair Extensions | Luxury Wigs & Extensions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <svg class="loader-logo" viewBox="0 0 100 120" fill="none">
+            <circle cx="50" cy="65" r="40" stroke="#D4AF37" stroke-width="3"/>
+            <circle cx="50" cy="65" r="34" stroke="#D4AF37" stroke-width="1"/>
+            <text x="50" y="78" text-anchor="middle" font-family="Playfair Display, serif" font-size="32" fill="#D4AF37" font-weight="600">SB</text>
+            <path d="M20 30 L30 10 L40 25 L50 5 L60 25 L70 10 L80 30" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="30" cy="8" r="3" fill="#D4AF37"/>
+            <circle cx="50" cy="3" r="3" fill="#D4AF37"/>
+            <circle cx="70" cy="8" r="3" fill="#D4AF37"/>
+        </svg>
+        <div class="loader-line"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="showPage('home')">
+                <svg viewBox="0 0 100 120" fill="none">
+                    <circle cx="50" cy="65" r="40" stroke="#D4AF37" stroke-width="3"/>
+                    <circle cx="50" cy="65" r="34" stroke="#D4AF37" stroke-width="1"/>
+                    <text x="50" y="78" text-anchor="middle" font-family="Playfair Display, serif" font-size="32" fill="#D4AF37" font-weight="600">SB</text>
+                    <path d="M20 30 L30 10 L40 25 L50 5 L60 25 L70 10 L80 30" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="30" cy="8" r="3" fill="#D4AF37"/>
+                    <circle cx="50" cy="3" r="3" fill="#D4AF37"/>
+                    <circle cx="70" cy="8" r="3" fill="#D4AF37"/>
+                </svg>
+                <span class="nav-logo-text">Stunning Hair</span>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')">Home</a></li>
+                <li><a onclick="showPage('shop')">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn" onclick="toggleSearch()" aria-label="Search">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <button class="nav-action-btn" aria-label="Wishlist">
+                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="nav-action-btn" onclick="openCart()" aria-label="Cart">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a onclick="showPage('home'); toggleMobileMenu();">Home</a>
+        <a onclick="showPage('shop'); toggleMobileMenu();">Shop</a>
+        <a onclick="toggleMobileMenu(); document.getElementById('about').scrollIntoView({behavior:'smooth'});">About</a>
+        <a onclick="toggleMobileMenu(); document.getElementById('testimonials').scrollIntoView({behavior:'smooth'});">Reviews</a>
+        <a onclick="toggleMobileMenu(); document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main id="mainContent">
+        <!-- HOME PAGE -->
+        <div id="homePage">
+            <!-- HERO SECTION -->
+            <section class="hero" id="hero">
+                <div class="hero-bg-pattern"></div>
+                <div class="hero-glow"></div>
+                <div class="hero-particles" id="heroParticles"></div>
+
+
+
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <span class="hero-badge">✦ Premium Collection 2024 ✦</span>
+                        <h1 class="hero-title">Luxury Hair.<br><span class="gold-text">Flawless Confidence.</span></h1>
+                        <p class="hero-subtitle">Premium wigs and extensions designed to elevate your beauty.<br>Crafted with 100% human hair for the ultimate in elegance.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="showPage('shop')">Shop Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                            <button class="btn btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">View Collections</button>
+                        </div>
+                    </div>
+                    <div class="hero-video-wrapper">
+                        <video id="heroVideo" autoplay muted playsinline class="hero-video">
+                            <source src="hero1.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                </div>
+                <div class="hero-scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </section>
+
+            <!-- MARQUEE -->
+            <div class="marquee-section">
+                <div class="marquee-track">
+                    <div class="marquee-item"><span>100% Human Hair</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Free Shipping Over $200</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Premium Quality</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Handcrafted With Love</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Satisfaction Guaranteed</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Luxury Experience</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>100% Human Hair</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Free Shipping Over $200</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Premium Quality</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Handcrafted With Love</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Satisfaction Guaranteed</span><div class="marquee-dot"></div></div>
+                    <div class="marquee-item"><span>Luxury Experience</span><div class="marquee-dot"></div></div>
+                </div>
+            </div>
+
+            <!-- ABOUT SECTION -->
+            <section class="section about" id="about">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-image fade-in-left">
+                            <div class="about-image-placeholder">
+                                <img src="SHELLYHAIR.jpg" alt="Owner - Luxury Hair Craftsmanship" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                            </div>
+                            <div class="about-image-frame"></div>
+                        </div>
+                        <div class="about-content fade-in-right">
+                            <span class="section-label">Our Story</span>
+                            <h2>Where <span class="gold-shimmer">Elegance</span> Meets Craftsmanship</h2>
+                            <p>At Stunning Hair Extensions, we believe every woman deserves to feel extraordinary. Our journey began with a simple vision: to create hair products that don't just look beautiful — they make you feel unstoppable.</p>
+                            <p>Each piece is meticulously handcrafted using the finest 100% human hair, selected for its natural luster, softness, and durability. From our state-of-the-art studio to your doorstep, we ensure every detail meets our exacting standards.</p>
+                            <div class="about-features">
+                                <div class="about-feature"><div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span>100% Human Hair</span></div>
+                                <div class="about-feature"><div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span>Premium Quality</span></div>
+                                <div class="about-feature"><div class="about-feature-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><span>Free Shipping</span></div>
+                                <div class="about-feature"><div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span>24/7 Support</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEATURED PRODUCTS -->
+            <section class="section products" id="products">
+                <div class="container">
+                    <div class="section-header fade-in">
+                        <span class="section-label">Curated For You</span>
+                        <h2 class="section-title">Featured <span class="gold-shimmer">Collections</span></h2>
+                        <div class="section-divider"></div>
+                        <p class="section-subtitle">Discover our most loved pieces, handpicked for their exceptional quality and timeless beauty.</p>
+                    </div>
+                    <div class="products-grid" id="featuredProducts"></div>
+                    <div style="text-align: center; margin-top: 50px;" class="fade-in">
+                        <button class="btn btn-outline" onclick="showPage('shop')">View All Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TESTIMONIALS -->
+            <section class="section testimonials" id="testimonials">
+                <div class="container">
+                    <div class="section-header fade-in">
+                        <span class="section-label">Client Love</span>
+                        <h2 class="section-title">What Our <span class="gold-shimmer">Clients</span> Say</h2>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="testimonials-carousel" id="testimonialsCarousel"></div>
+                </div>
+            </section>
+
+            <!-- INSTAGRAM SECTION -->
+            <section class="instagram-section" id="instagram">
+                <div class="container">
+                    <div class="section-header fade-in">
+                        <span class="section-label">@stunning_hairextensions</span>
+                        <h2 class="section-title">Follow Our <span class="gold-shimmer">Journey</span></h2>
+                        <div class="section-divider"></div>
+                        <p class="section-subtitle">Tag us in your stunning looks and get featured!</p>
+                    </div>
+                    <div class="instagram-grid fade-in">
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="instagram-item"><img src="insta1.png" alt="Stunning Hair Extensions Instagram"><div class="instagram-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div></a>
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="instagram-item"><img src="insta2.png" alt="Stunning Hair Extensions Instagram"><div class="instagram-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div></a>
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="instagram-item"><img src="insta3.png" alt="Stunning Hair Extensions Instagram"><div class="instagram-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div></a>
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="instagram-item"><img src="insta4.png" alt="Stunning Hair Extensions Instagram"><div class="instagram-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div></a>
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="instagram-item"><img src="insta5.png" alt="Stunning Hair Extensions Instagram"><div class="instagram-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div></a>
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="instagram-item"><img src="insta6.png" alt="Stunning Hair Extensions Instagram"><div class="instagram-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div></a>
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="instagram-item"><img src="insta7.png" alt="Stunning Hair Extensions Instagram"><div class="instagram-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section class="newsletter" id="contact">
+                <div class="container">
+                    <div class="newsletter-content fade-in">
+                        <span class="section-label">Get In Touch</span>
+                        <h2 class="section-title">We'd Love to <span class="gold-shimmer">Hear From You</span></h2>
+                        <div class="section-divider"></div>
+                        <div class="contact-simple">
+                            <a href="tel:+14169961490" class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 5.61 5.61l1.72-1.72a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 14.9z"/></svg>
+                                <span>+1 (416) 996-1490</span>
+                            </a>
+                            <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                                <span>@stunning_hairextensions</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SHOP PAGE -->
+        <div class="shop-page" id="shopPage">
+            <div class="container">
+                <div class="shop-header fade-in">
+                    <span class="section-label">Our Collection</span>
+                    <h1 class="section-title">Shop <span class="gold-shimmer">All Products</span></h1>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="shop-layout">
+                    <aside class="shop-filters">
+                        <div class="filter-group">
+                            <h4>Length</h4>
+                            <div class="filter-option active" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>12 inches</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>14 inches</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>16 inches</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>18 inches</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>20 inches</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>24+ inches</span></div>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Texture</h4>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Straight</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Body Wave</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Curly</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Deep Wave</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Kinky Curly</span></div>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Color</h4>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Natural Black</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Off-Black</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brown</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Blonde</span></div>
+                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Custom Colors</span></div>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <div class="price-range">
+                                <input type="range" min="50" max="1000" value="500" id="priceRange" oninput="updatePriceLabel()">
+                                <div class="price-labels">
+                                    <span>$50</span>
+                                    <span id="priceValue">$500</span>
+                                    <span>$1,000+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="shop-main">
+                        <div class="shop-toolbar">
+                            <span class="results-count" id="resultsCount">Showing 12 products</span>
+                            <select class="sort-dropdown" onchange="sortProducts(this.value)">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="bestselling">Best Selling</option>
+                                <option value="newest">Newest Arrivals</option>
+                            </select>
+                        </div>
+                        <div class="shop-products-grid" id="shopProductsGrid"></div>
+                        <div class="pagination">
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT DETAIL PAGE -->
+        <div class="product-detail-page" id="productDetailPage">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a onclick="showPage('home')">Home</a>
+                    <span>/</span>
+                    <a onclick="showPage('shop')">Shop</a>
+                    <span>/</span>
+                    <span class="current" id="detailBreadcrumb">Product Name</span>
+                </div>
+                <div class="product-detail-grid">
+                    <div class="product-gallery">
+                        <div class="gallery-main" id="galleryMain">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <div class="gallery-thumbs">
+                            <div class="gallery-thumb active" onclick="selectThumb(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            </div>
+                            <div class="gallery-thumb" onclick="selectThumb(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            </div>
+                            <div class="gallery-thumb" onclick="selectThumb(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            </div>
+                            <div class="gallery-thumb" onclick="selectThumb(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-detail-info">
+                        <span class="detail-category" id="detailCategory">WIGS</span>
+                        <h1 class="detail-title" id="detailTitle">Product Name</h1>
+
+
+                        <p class="detail-description" id="detailDesc">Experience luxury with our premium human hair wig. Handcrafted with meticulous attention to detail, this piece features a natural-looking hairline and silky-smooth texture that moves beautifully. Perfect for any occasion.</p>
+                        <div class="detail-option">
+                            <label>Length</label>
+                            <div class="option-values">
+                                <div class="option-value" onclick="selectOption(this, 'length')">12"</div>
+                                <div class="option-value selected" onclick="selectOption(this, 'length')">14"</div>
+                                <div class="option-value" onclick="selectOption(this, 'length')">16"</div>
+                                <div class="option-value" onclick="selectOption(this, 'length')">18"</div>
+                                <div class="option-value" onclick="selectOption(this, 'length')">20"</div>
+                            </div>
+                        </div>
+                        <div class="detail-option">
+                            <label>Density</label>
+                            <div class="option-values">
+                                <div class="option-value" onclick="selectOption(this, 'density')">150%</div>
+                                <div class="option-value selected" onclick="selectOption(this, 'density')">180%</div>
+                                <div class="option-value" onclick="selectOption(this, 'density')">200%</div>
+                                <div class="option-value" onclick="selectOption(this, 'density')">250%</div>
+                            </div>
+                        </div>
+                        <div class="detail-option">
+                            <label>Quantity</label>
+                            <div class="quantity-selector">
+                                <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                                <div class="qty-value" id="detailQty">1</div>
+                                <button class="qty-btn" onclick="changeQty(1)">+</button>
+                            </div>
+                        </div>
+                        <div class="detail-buttons">
+                            <button class="btn btn-primary" onclick="addToCartFromDetail()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Add to Cart</button>
+                            <button class="btn btn-outline" onclick="showPage('checkout')">Buy Now</button>
+                        </div>
+                        <div class="detail-meta">
+                            <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>100% Human Hair — Can be styled, colored & heat treated</span></div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span>Free shipping on orders over $200</span></div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>30-day return policy</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REVIEWS -->
+                <div class="reviews-section">
+                    <div class="reviews-header">
+                        <h3>Customer Reviews</h3>
+                        <button class="write-review-btn">Write a Review</button>
+                    </div>
+                    <div class="reviews-list">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="review-avatar">JM</div>
+                                    <div><div class="review-name">Jessica M.</div><div class="review-date">December 15, 2024</div></div>
+                                </div>
+                                <div class="stars">
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                            </div>
+                            <p class="review-text">Absolutely stunning quality! The hair feels so soft and natural. I've received so many compliments. Worth every penny!</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="review-avatar">AT</div>
+                                    <div><div class="review-name">Aisha T.</div><div class="review-date">December 10, 2024</div></div>
+                                </div>
+                                <div class="stars">
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                            </div>
+                            <p class="review-text">The best wig I've ever purchased! The lace is undetectable and the hair blends perfectly. Shipping was fast too!</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="review-avatar">RL</div>
+                                    <div><div class="review-name">Rachel L.</div><div class="review-date">November 28, 2024</div></div>
+                                </div>
+                                <div class="stars">
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star empty" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                            </div>
+                            <p class="review-text">Great quality extensions. Thick from root to tip. Customer service was also very helpful with my color match.</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="review-avatar">CD</div>
+                                    <div><div class="review-name">Chloe D.</div><div class="review-date">November 15, 2024</div></div>
+                                </div>
+                                <div class="stars">
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                            </div>
+                            <p class="review-text">I wear this unit everyday. It handles heat perfectly and doesn't tangle. Highly recommend for daily wear!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RELATED PRODUCTS -->
+                <div class="related-section">
+                    <h3 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:30px;">You May Also Like</h3>
+                    <div class="related-carousel" id="relatedCarousel"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHECKOUT PAGE -->
+        <div class="checkout-page" id="checkoutPage">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a onclick="showPage('home')">Home</a><span>/</span>
+                    <a onclick="showPage('shop')">Shop</a><span>/</span>
+                    <span class="current">Checkout</span>
+                </div>
+                <div class="checkout-grid">
+                    <div class="checkout-form-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Enter your email">
+                        </div>
+                        <h3 style="margin-top: 40px;">Shipping Address</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="First name">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" placeholder="Street address">
+                        </div>
+                        <div class="form-group">
+                            <label>Apartment, suite, etc. (optional)</label>
+                            <input type="text" placeholder="Apartment, suite, unit, etc.">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" placeholder="City">
+                            </div>
+                            <div class="form-group">
+                                <label>State / Province</label>
+                                <select>
+                                    <option>Select State</option>
+                                    <option>California</option>
+                                    <option>New York</option>
+                                    <option>Texas</option>
+                                    <option>Florida</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>ZIP / Postal Code</label>
+                                <input type="text" placeholder="ZIP code">
+                            </div>
+                        </div>
+                        <h3 style="margin-top: 40px;">Payment Method</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method selected" onclick="selectPayment(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                                Credit Card
+                            </div>
+                            <div class="payment-method" onclick="selectPayment(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                PayPal
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiration Date</label>
+                                <input type="text" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label>Security Code (CVV)</label>
+                                <input type="text" placeholder="123">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 20px; justify-content: center;" onclick="placeOrder()">Place Order</button>
+                        <div class="secure-badge">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                            Secure encrypted checkout
+                        </div>
+                    </div>
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div id="checkoutItems"></div>
+                        <div class="summary-totals">
+                            <div class="summary-row"><span>Subtotal</span><span id="checkoutSubtotal">$0.00</span></div>
+                            <div class="summary-row"><span>Shipping</span><span>Calculated at next step</span></div>
+                            <div class="summary-row"><span>Tax</span><span id="checkoutTax">$0.00</span></div>
+                            <div class="summary-row total"><span>Total</span><span id="checkoutTotal">$0.00</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-simple">
+                <div class="footer-logo" onclick="showPage('home')" style="cursor:pointer;">
+                    <svg viewBox="0 0 100 120" fill="none">
+                        <circle cx="50" cy="65" r="40" stroke="#D4AF37" stroke-width="3"/>
+                        <circle cx="50" cy="65" r="34" stroke="#D4AF37" stroke-width="1"/>
+                        <text x="50" y="78" text-anchor="middle" font-family="Playfair Display, serif" font-size="32" fill="#D4AF37" font-weight="600">SB</text>
+                        <path d="M20 30 L30 10 L40 25 L50 5 L60 25 L70 10 L80 30" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="30" cy="8" r="3" fill="#D4AF37"/><circle cx="50" cy="3" r="3" fill="#D4AF37"/><circle cx="70" cy="8" r="3" fill="#D4AF37"/>
+                    </svg>
+                    <span>Stunning Hair</span>
+                </div>
+                <nav class="footer-nav-links">
+                    <a onclick="showPage('home')">Home</a>
+                    <a onclick="showPage('shop')">Shop</a>
+                    <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
+                    <a onclick="document.getElementById('testimonials').scrollIntoView({behavior:'smooth'})">Reviews</a>
+                    <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+                    <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener">Instagram</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stunning Hair Extensions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Bag (<span id="cartItemCount">0</span>)</h3>
+            <button class="cart-close" onclick="closeCart()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-empty" id="cartEmpty">
+            <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <p>Your bag is currently empty.</p>
+            <button class="btn btn-primary" style="margin-top:20px;" onclick="closeCart(); showPage('shop')">Start Shopping</button>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+            <p class="cart-shipping-note">Taxes and shipping calculated at checkout.</p>
+            <button class="checkout-btn" onclick="closeCart(); showPage('checkout')">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- QUICK VIEW MODAL -->
+    <div class="modal-overlay" id="quickViewModal" onclick="if(event.target===this) closeQuickView()">
+        <div class="modal">
+            <button class="modal-close" onclick="closeQuickView()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            <div class="modal-image"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="modal-content">
+                <span class="detail-category" id="qvCategory">WIGS</span>
+                <h2 class="detail-title" id="qvTitle">Product Name</h2>
+
+
+                <p class="detail-description" id="qvDesc">Experience luxury with our premium human hair product.</p>
+                <div class="detail-buttons">
+                    <button class="btn btn-primary" id="qvAddCart">Add to Cart</button>
+                    <button class="btn btn-outline" id="qvViewFull">View Full Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast">
+        <div class="toast-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="toast-message" id="toastMessage">Added to cart!</span>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
