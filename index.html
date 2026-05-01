@@ -229,69 +229,30 @@
 
         <!-- SHOP PAGE -->
         <div class="shop-page" id="shopPage">
-            <div class="container">
-                <div class="shop-header fade-in">
+            <div class="coming-soon-wrapper">
+                <div class="coming-soon-content">
+                    <svg class="coming-soon-logo" viewBox="0 0 100 120" fill="none">
+                        <circle cx="50" cy="65" r="40" stroke="#D4AF37" stroke-width="3"/>
+                        <circle cx="50" cy="65" r="34" stroke="#D4AF37" stroke-width="1"/>
+                        <text x="50" y="78" text-anchor="middle" font-family="Playfair Display, serif" font-size="32" fill="#D4AF37" font-weight="600">SB</text>
+                        <path d="M20 30 L30 10 L40 25 L50 5 L60 25 L70 10 L80 30" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="30" cy="8" r="3" fill="#D4AF37"/>
+                        <circle cx="50" cy="3" r="3" fill="#D4AF37"/>
+                        <circle cx="70" cy="8" r="3" fill="#D4AF37"/>
+                    </svg>
                     <span class="section-label">Our Collection</span>
-                    <h1 class="section-title">Shop <span class="gold-shimmer">All Products</span></h1>
+                    <h1 class="coming-soon-title">Something <span class="gold-shimmer">Beautiful</span><br>Is Coming</h1>
                     <div class="section-divider"></div>
-                </div>
-                <div class="shop-layout">
-                    <aside class="shop-filters">
-                        <div class="filter-group">
-                            <h4>Length</h4>
-                            <div class="filter-option active" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>12 inches</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>14 inches</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>16 inches</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>18 inches</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>20 inches</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>24+ inches</span></div>
-                        </div>
-                        <div class="filter-group">
-                            <h4>Texture</h4>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Straight</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Body Wave</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Curly</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Deep Wave</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Kinky Curly</span></div>
-                        </div>
-                        <div class="filter-group">
-                            <h4>Color</h4>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Natural Black</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Off-Black</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brown</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Blonde</span></div>
-                            <div class="filter-option" onclick="toggleFilter(this)"><div class="filter-checkbox"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Custom Colors</span></div>
-                        </div>
-                        <div class="filter-group">
-                            <h4>Price Range</h4>
-                            <div class="price-range">
-                                <input type="range" min="50" max="1000" value="500" id="priceRange" oninput="updatePriceLabel()">
-                                <div class="price-labels">
-                                    <span>$50</span>
-                                    <span id="priceValue">$500</span>
-                                    <span>$1,000+</span>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
-                    <div class="shop-main">
-                        <div class="shop-toolbar">
-                            <span class="results-count" id="resultsCount">Showing 12 products</span>
-                            <select class="sort-dropdown" onchange="sortProducts(this.value)">
-                                <option value="featured">Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="bestselling">Best Selling</option>
-                                <option value="newest">Newest Arrivals</option>
-                            </select>
-                        </div>
-                        <div class="shop-products-grid" id="shopProductsGrid"></div>
-                        <div class="pagination">
-                            <button class="page-btn active">1</button>
-                            <button class="page-btn">2</button>
-                            <button class="page-btn">3</button>
-                            <button class="page-btn">→</button>
-                        </div>
+                    <p class="coming-soon-subtitle">Our online shop is almost ready. In the meantime, reach out to us directly to inquire about our luxury hair extensions and wigs.</p>
+                    <div class="coming-soon-actions">
+                        <a href="tel:+14169961490" class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 5.61 5.61l1.72-1.72a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 14.9z"/></svg>
+                            Call Us
+                        </a>
+                        <a href="https://www.instagram.com/stunning_hairextensions" target="_blank" rel="noopener" class="btn btn-outline">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            Instagram
+                        </a>
                     </div>
                 </div>
             </div>
