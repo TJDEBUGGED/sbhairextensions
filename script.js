@@ -210,9 +210,11 @@ function renderFeaturedProducts() {
 
 function renderShopProducts(sortedProducts) {
     const container = document.getElementById('shopProductsGrid');
+    if (!container) return;
     const prods = sortedProducts || products;
     container.innerHTML = prods.map(p => createProductCard(p)).join('');
-    document.getElementById('resultsCount').textContent = `Showing ${prods.length} products`;
+    const countEl = document.getElementById('resultsCount');
+    if (countEl) countEl.textContent = `Showing ${prods.length} products`;
     setTimeout(initScrollAnimations, 100);
 }
 
