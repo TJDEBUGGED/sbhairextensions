@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     renderFeaturedProducts();
     renderShopProducts();
     renderTestimonials();
+    renderReviewsPage();
     createParticles();
     initScrollAnimations();
     initNavbarScroll();
@@ -125,6 +126,7 @@ function initScrollAnimations() {
 function showPage(page) {
     document.getElementById('homePage').style.display = 'none';
     document.getElementById('shopPage').classList.remove('active');
+    document.getElementById('reviewsPage').classList.remove('active');
     document.getElementById('productDetailPage').classList.remove('active');
     document.getElementById('checkoutPage').classList.remove('active');
     switch (page) {
@@ -133,6 +135,9 @@ function showPage(page) {
             break;
         case 'shop':
             document.getElementById('shopPage').classList.add('active');
+            break;
+        case 'reviews':
+            document.getElementById('reviewsPage').classList.add('active');
             break;
         case 'product':
             document.getElementById('productDetailPage').classList.add('active');
@@ -206,6 +211,27 @@ function renderTestimonials() {
                 <div>
                     <div class="testimonial-name">${t.name}</div>
                     <div class="testimonial-title">${t.title}</div>
+                </div>
+            </div>
+        </div>`).join('');
+}
+
+function renderReviewsPage() {
+    const container = document.getElementById('reviewsPageGrid');
+    if (!container) return;
+    container.innerHTML = testimonials.map(t => `
+        <div class="review-card-full">
+            <div class="review-card-quote">“</div>
+            <p class="review-card-text">${t.text}</p>
+            <div class="review-card-stars">${starsHtml(5)}</div>
+            <div class="review-card-author">
+                <div class="review-card-avatar">${t.initials}</div>
+                <div class="review-card-info">
+                    <div class="review-card-name">${t.name}</div>
+                    <div class="review-card-source">
+                        <svg width="12" height="12" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        ${t.title}
+                    </div>
                 </div>
             </div>
         </div>`).join('');
