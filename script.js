@@ -82,11 +82,13 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         document.getElementById('pageLoader').classList.add('loaded');
     }, 1500);
-    renderFeaturedProducts();
+    renderCatalogue();
     renderShopProducts();
     renderTestimonials();
     renderReviewsPage();
     createParticles();
+    createSparkles();
+    initHeroParallax();
     initScrollAnimations();
     initNavbarScroll();
 });
@@ -105,6 +107,59 @@ function createParticles() {
         particle.style.height = particle.style.width;
         container.appendChild(particle);
     }
+}
+
+// ===== SPARKLES =====
+function createSparkles() {
+    const container = document.getElementById('heroSparkles');
+    if (!container) return;
+    const sparkleSvg = '<svg viewBox="0 0 24 24"><path d="M12 0l1.8 8.4L22 12l-8.2 3.6L12 24l-1.8-8.4L2 12l8.2-3.6z"/></svg>';
+    const positions = [
+        { top: 15, left: 8 }, { top: 28, left: 42 }, { top: 65, left: 12 },
+        { top: 82, left: 38 }, { top: 18, left: 88 }, { top: 55, left: 92 },
+        { top: 75, left: 78 }, { top: 8, left: 55 }
+    ];
+    positions.forEach((pos, i) => {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'hero-sparkle';
+        sparkle.innerHTML = sparkleSvg;
+        sparkle.style.top = pos.top + '%';
+        sparkle.style.left = pos.left + '%';
+        sparkle.style.animationDelay = (i * 0.6) + 's';
+        sparkle.style.animationDuration = (3 + Math.random() * 2) + 's';
+        const size = 10 + Math.random() * 10;
+        sparkle.style.width = size + 'px';
+        sparkle.style.height = size + 'px';
+        container.appendChild(sparkle);
+    });
+}
+
+// ===== HERO PARALLAX =====
+function initHeroParallax() {
+    const hero = document.getElementById('hero');
+    const wrapper = document.getElementById('heroVideoWrapper');
+    if (!hero || !wrapper) return;
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
+
+    let raf = null;
+    let enabled = false;
+    setTimeout(() => { enabled = true; }, 2200);
+    hero.addEventListener('mousemove', (e) => {
+        if (!enabled) return;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+            const rect = hero.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            const rotateY = x * 8;
+            const rotateX = -y * 8;
+            wrapper.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+        });
+    });
+    hero.addEventListener('mouseleave', () => {
+        if (!enabled) return;
+        wrapper.style.transform = 'perspective(1500px) rotateX(0) rotateY(0) translateZ(0)';
+    });
 }
 
 // ===== NAVBAR SCROLL =====
@@ -202,9 +257,36 @@ function createProductCard(product) {
         </div>`;
 }
 
-function renderFeaturedProducts() {
-    const container = document.getElementById('featuredProducts');
-    container.innerHTML = products.slice(0, 8).map(p => createProductCard(p)).join('');
+// ===== CATALOGUE =====
+const catalogue = [
+    { image: 'cat1.jpg', label: 'Hair Extensions', tag: 'Extensions' },
+    { image: 'cat2.jpg', label: 'Lace Front Wig', tag: 'Wigs' },
+    { image: 'cat3.jpg', label: 'Tape-In Extensions', tag: 'Extensions' },
+    { image: 'cat4.jpg', label: 'Full Lace Wig', tag: 'Wigs' },
+    { image: 'cat5.jpg', label: 'Body Wave', tag: 'Extensions' },
+    { image: 'cat6.jpg', label: 'Kinky Curly', tag: 'Wigs' },
+    { image: 'cat7.jpg', label: 'Straight Extensions', tag: 'Extensions' },
+    { image: 'cat8.jpg', label: 'Deep Wave', tag: 'Extensions' },
+];
+
+function renderCatalogue() {
+    const container = document.getElementById('catalogueGrid');
+    if (!container) return;
+    container.innerHTML = catalogue.map((item, i) => `
+        <div class="catalogue-card scale-in" style="animation-delay:${i * 0.07}s">
+            <div class="catalogue-img-wrap">
+                <img src="${item.image}" alt="${item.label}" class="catalogue-img" onerror="this.parentElement.classList.add('catalogue-img-missing')">
+                <div class="catalogue-overlay">
+                    <span class="catalogue-overlay-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </span>
+                </div>
+            </div>
+            <div class="catalogue-info">
+                <span class="catalogue-tag">${item.tag}</span>
+                <span class="catalogue-label">${item.label}</span>
+            </div>
+        </div>`).join('');
     setTimeout(initScrollAnimations, 100);
 }
 
