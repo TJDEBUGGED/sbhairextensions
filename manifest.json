@@ -1,0 +1,35 @@
+{
+  "name": "Stunning Hair Extensions",
+  "short_name": "Stunning Hair",
+  "description": "Premium wigs and hair extensions in Mississauga. 100% human hair, 5-star rated. Serving the GTA.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAFAF5",
+  "theme_color": "#D4AF37",
+  "lang": "en-CA",
+  "categories": ["beauty", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "url": "/contact.html",
+      "description": "Call or visit Stunning Hair Extensions in Mississauga"
+    },
+    {
+      "name": "About Shelly",
+      "short_name": "About",
+      "url": "/about.html",
+      "description": "Learn about our expert stylist"
+    }
+  ]
+}
