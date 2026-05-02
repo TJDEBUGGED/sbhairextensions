@@ -1,4 +1,4 @@
 # ads.txt — Authorized Digital Sellers
-# Stunning Hair Extensions — https://sbhairextensions.netlify.app
+# Stunning Hair Extensions — https://www.stunningextensions.ca
 # No programmatic advertising is currently active on this domain.
 # This file is present to establish ad trust for future use.

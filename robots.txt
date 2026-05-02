@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://sbhairextensions.netlify.app/sitemap.xml
+Sitemap: https://www.stunningextensions.ca/sitemap.xml
