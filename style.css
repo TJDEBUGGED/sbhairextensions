@@ -433,6 +433,8 @@ h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; font-weight: 500; }
 .footer-links a:hover { color: var(--gold); }
 .footer-bottom { padding: 24px 0; text-align: center; }
 .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.4); }
+.footer-address { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px !important; }
+.footer-address svg { opacity: 0.5; flex-shrink: 0; }
 .payment-icons { display: flex; gap: 12px; align-items: center; }
 .payment-icon { padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 6px; font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 600; }
 
