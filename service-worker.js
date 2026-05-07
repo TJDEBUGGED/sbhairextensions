@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const STATIC_CACHE = 'she-static-' + CACHE_VERSION;
 const HTML_CACHE   = 'she-html-'   + CACHE_VERSION;
 
