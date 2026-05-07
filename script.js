@@ -259,23 +259,26 @@ function createProductCard(product) {
 
 // ===== CATALOGUE =====
 const catalogue = [
-    { image: 'cat1.jpg', label: 'Hair Extensions', tag: 'Extensions' },
-    { image: 'cat2.jpg', label: 'Lace Front Wig', tag: 'Wigs' },
-    { image: 'cat3.jpg', label: 'Tape-In Extensions', tag: 'Extensions' },
-    { image: 'cat4.jpg', label: 'Full Lace Wig', tag: 'Wigs' },
-    { image: 'cat5.jpg', label: 'Body Wave', tag: 'Extensions' },
-    { image: 'cat6.jpg', label: 'Kinky Curly', tag: 'Wigs' },
-    { image: 'cat7.jpg', label: 'Straight Extensions', tag: 'Extensions' },
-    { image: 'cat8.jpg', label: 'Deep Wave', tag: 'Extensions' },
+    { image: 'cat1.png', label: 'Hair Extensions', tag: 'Extensions' },
+    { image: 'cat2.png', label: 'Lace Front Wig', tag: 'Wigs' },
+    { image: 'cat3.png', label: 'Tape-In Extensions', tag: 'Extensions' },
+    { image: 'cat4.png', label: 'Full Lace Wig', tag: 'Wigs' },
+    { image: 'cat5.png', label: 'Body Wave', tag: 'Extensions' },
+    { image: 'cat6.png', label: 'Kinky Curly', tag: 'Wigs' },
+    { image: 'cat7.png', label: 'Straight Extensions', tag: 'Extensions' },
+    { image: 'cat8.png', label: 'Deep Wave', tag: 'Extensions' },
 ];
 
 function renderCatalogue() {
     const container = document.getElementById('catalogueGrid');
     if (!container) return;
+
     container.innerHTML = catalogue.map((item, i) => `
         <div class="catalogue-card scale-in" style="animation-delay:${i * 0.07}s">
             <div class="catalogue-img-wrap">
-                <img src="${item.image}" alt="${item.label}" class="catalogue-img" onerror="this.parentElement.classList.add('catalogue-img-missing')">
+                <img src="${item.image}" alt="${item.label}" class="catalogue-img"
+                     onload="window._catLoaded=(window._catLoaded||0)+1; window._updateCatLayout && window._updateCatLayout();"
+                     onerror="this.closest('.catalogue-card').style.display='none'; window._catHidden=(window._catHidden||0)+1; window._updateCatLayout && window._updateCatLayout();">
                 <div class="catalogue-overlay">
                     <span class="catalogue-overlay-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -287,6 +290,17 @@ function renderCatalogue() {
                 <span class="catalogue-label">${item.label}</span>
             </div>
         </div>`).join('');
+
+    window._catLoaded = 0;
+    window._catHidden = 0;
+    window._updateCatLayout = function() {
+        const total = catalogue.length;
+        const hidden = window._catHidden || 0;
+        const visible = total - hidden;
+        if (visible === 1) container.classList.add('catalogue-single');
+        else container.classList.remove('catalogue-single');
+    };
+
     setTimeout(initScrollAnimations, 100);
 }
 
