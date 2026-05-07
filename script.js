@@ -1,4 +1,4 @@
-// ===== HERO VIDEO ROTATION =====
+﻿// ===== HERO VIDEO ROTATION =====
 const heroVideos = ['hero1.mp4', 'hero2.mp4', 'hero3.mp4', 'hero4.mp4'];
 let heroVideoIndex = 0;
 
@@ -230,7 +230,7 @@ function starsHtml(rating) {
     ).join('');
 }
 
-const placeholderSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
+const placeholderSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
 
 function createProductCard(product) {
     return `

@@ -1,8 +1,8 @@
-/* Critical CSS — above-the-fold styles inlined in <head>
+﻿/* Critical CSS — above-the-fold styles inlined in <head>
    Covers: reset, root vars, body, navbar, hero skeleton
    Full styles are in style.css (loaded async) */
 
-:root{--gold:#D4AF37;--gold-shimmer:linear-gradient(90deg,#D4AF37 0%,#F5E6A3 25%,#D4AF37 50%,#F5E6A3 75%,#D4AF37 100%);--white:#FFFFFF;--off-white:#FAFAF5;--text-dark:#2C2C2C;--text-medium:#5A5A5A;--text-light:#8A8A8A;--border-light:#E8E0D0;--transition-smooth:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94)}
+:root{--gold:#C9A84C;--gold-shimmer:linear-gradient(90deg,#C9A84C 0%,#EDD98A 25%,#C9A84C 50%,#EDD98A 75%,#C9A84C 100%);--white:#FFFFFF;--off-white:#FAFAF5;--text-dark:#2C2C2C;--text-medium:#5A5A5A;--text-light:#8A8A8A;--border-light:#E8E0D0;--transition-smooth:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Inter',sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}

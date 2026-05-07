@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "Stunning Hair Extensions",
   "short_name": "Stunning Hair",
   "description": "Premium wigs and hair extensions in Mississauga. 100% human hair, 5-star rated. Serving the GTA.",
@@ -7,7 +7,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#FAFAF5",
-  "theme_color": "#D4AF37",
+  "theme_color": "#C9A84C",
   "lang": "en-CA",
   "categories": ["beauty", "lifestyle"],
   "icons": [
